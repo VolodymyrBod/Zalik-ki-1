@@ -1,11 +1,11 @@
-def replace_words_file(file_name, word1, word2):
+def replace_words_file(custom_file_name, word1, word2):
     try:
         # Запис довільного тексту у файл
-        with open(file_name, 'w') as file:
+        with open(custom_file_name, 'w') as file:
             file.write("Це текст з довільними словами. Слово, книга, собака, математика, книга, ручка, собака.")
 
         while True:
-            with open(file_name, 'r') as file:
+            with open(custom_file_name, 'r') as file:
                 content = file.read()
 
             # Заміна
@@ -15,7 +15,7 @@ def replace_words_file(file_name, word1, word2):
             if modified_content == content:
                 print(f"Слово '{word1}' не знайдено у тексті. Заміна не виконана.")
             else:
-                with open(file_name, 'w') as file:
+                with open(custom_file_name, 'w') as file:
                     file.write(modified_content)
 
                 print(f"Заміна успішна: '{word1}' було замінено на '{word2}'.")
